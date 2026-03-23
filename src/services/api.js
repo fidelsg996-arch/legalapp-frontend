@@ -1,7 +1,5 @@
-// Detectar entorno automáticamente
-const API_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://legalapp-backend.onrender.com/api'  // Cambiar después por tu URL de Render
-  : 'http://localhost:3000/api';
+// URL del backend en producción (Vercel)
+const API_URL = 'https://legalapp-backend.vercel.app/api';
 
 // ======================
 // CURSOS
