@@ -1,4 +1,4 @@
-// URL del backend usando ngrok
+// URL del backend para producción (ngrok)
 const API_URL = 'https://williemae-unlatticed-giavanna.ngrok-free.dev/api';
 
 // ======================
