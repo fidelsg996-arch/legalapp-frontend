@@ -1,113 +1,89 @@
-// URL del backend en Render 24/7
 const API_URL = 'https://backend-solo-5a3o.onrender.com/api';
 
-// ======================
-// CURSOS
-// ======================
-
 export const getCursos = async () => {
-  const response = await fetch(`${API_URL}/cursos`);
-  if (!response.ok) throw new Error('Error al obtener cursos');
-  return response.json();
+  const res = await fetch(`${API_URL}/cursos`);
+  if (!res.ok) throw new Error('Error al obtener cursos');
+  return res.json();
 };
 
 export const createCurso = async (curso) => {
-  const response = await fetch(`${API_URL}/cursos`, {
+  const res = await fetch(`${API_URL}/cursos`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(curso)
   });
-  if (!response.ok) throw new Error('Error al crear curso');
-  return response.json();
+  if (!res.ok) throw new Error('Error al crear curso');
+  return res.json();
 };
 
 export const updateCurso = async (id, curso) => {
-  const response = await fetch(`${API_URL}/cursos/${id}`, {
+  const res = await fetch(`${API_URL}/cursos/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(curso)
   });
-  if (!response.ok) throw new Error('Error al actualizar curso');
-  return response.json();
+  if (!res.ok) throw new Error('Error al actualizar curso');
+  return res.json();
 };
 
 export const deleteCurso = async (id) => {
-  const response = await fetch(`${API_URL}/cursos/${id}`, {
-    method: 'DELETE'
-  });
-  if (!response.ok) throw new Error('Error al eliminar curso');
-  return response.json();
+  const res = await fetch(`${API_URL}/cursos/${id}`, { method: 'DELETE' });
+  if (!res.ok) throw new Error('Error al eliminar curso');
+  return res.json();
 };
 
-// ======================
-// USUARIOS
-// ======================
-
 export const registerUser = async (userData) => {
-  const response = await fetch(`${API_URL}/usuarios/register`, {
+  const res = await fetch(`${API_URL}/usuarios/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(userData)
   });
-  if (!response.ok) throw new Error('Error al registrar usuario');
-  return response.json();
+  if (!res.ok) throw new Error('Error al registrar usuario');
+  return res.json();
 };
 
 export const loginUser = async (credentials) => {
-  const response = await fetch(`${API_URL}/usuarios/login`, {
+  const res = await fetch(`${API_URL}/usuarios/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(credentials)
   });
-  if (!response.ok) throw new Error('Error al iniciar sesión');
-  return response.json();
+  if (!res.ok) throw new Error('Error al iniciar sesión');
+  return res.json();
 };
 
 export const getUsuarios = async () => {
-  const response = await fetch(`${API_URL}/usuarios`);
-  if (!response.ok) throw new Error('Error al obtener usuarios');
-  return response.json();
+  const res = await fetch(`${API_URL}/usuarios`);
+  if (!res.ok) throw new Error('Error al obtener usuarios');
+  return res.json();
 };
 
 export const deleteUsuario = async (id) => {
-  const response = await fetch(`${API_URL}/usuarios/${id}`, {
-    method: 'DELETE'
-  });
-  if (!response.ok) throw new Error('Error al eliminar usuario');
-  return response.json();
+  const res = await fetch(`${API_URL}/usuarios/${id}`, { method: 'DELETE' });
+  if (!res.ok) throw new Error('Error al eliminar usuario');
+  return res.json();
 };
 
-// ======================
-// LIBROS
-// ======================
-
 export const getLibros = async () => {
-  const response = await fetch(`${API_URL}/libros`);
-  if (!response.ok) throw new Error('Error al obtener libros');
-  return response.json();
+  const res = await fetch(`${API_URL}/libros`);
+  if (!res.ok) throw new Error('Error al obtener libros');
+  return res.json();
 };
 
 export const uploadLibro = async (formData) => {
-  const response = await fetch(`${API_URL}/libros`, {
-    method: 'POST',
-    body: formData
-  });
-  if (!response.ok) throw new Error('Error al subir libro');
-  return response.json();
+  const res = await fetch(`${API_URL}/libros`, { method: 'POST', body: formData });
+  if (!res.ok) throw new Error('Error al subir libro');
+  return res.json();
 };
 
 export const deleteLibro = async (id) => {
-  const response = await fetch(`${API_URL}/libros/${id}`, {
-    method: 'DELETE'
-  });
-  if (!response.ok) throw new Error('Error al eliminar libro');
-  return response.json();
+  const res = await fetch(`${API_URL}/libros/${id}`, { method: 'DELETE' });
+  if (!res.ok) throw new Error('Error al eliminar libro');
+  return res.json();
 };
 
 export const registrarDescarga = async (id) => {
-  const response = await fetch(`${API_URL}/libros/${id}/descargar`, {
-    method: 'PUT'
-  });
-  if (!response.ok) throw new Error('Error al registrar descarga');
-  return response.json();
+  const res = await fetch(`${API_URL}/libros/${id}/descargar`, { method: 'PUT' });
+  if (!res.ok) throw new Error('Error al registrar descarga');
+  return res.json();
 };
