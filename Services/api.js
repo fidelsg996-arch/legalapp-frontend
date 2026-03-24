@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/api';
+// URL del backend usando ngrok
+const API_URL = 'https://williemae-unlatticed-giavanna.ngrok-free.dev/api';
 
 // ======================
 // CURSOS
@@ -65,6 +66,14 @@ export const loginUser = async (credentials) => {
 export const getUsuarios = async () => {
   const response = await fetch(`${API_URL}/usuarios`);
   if (!response.ok) throw new Error('Error al obtener usuarios');
+  return response.json();
+};
+
+export const deleteUsuario = async (id) => {
+  const response = await fetch(`${API_URL}/usuarios/${id}`, {
+    method: 'DELETE'
+  });
+  if (!response.ok) throw new Error('Error al eliminar usuario');
   return response.json();
 };
 
