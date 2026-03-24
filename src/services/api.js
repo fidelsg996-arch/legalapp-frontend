@@ -1,5 +1,5 @@
-// URL del backend para producción (ngrok)
-const API_URL = 'https://williemae-unlatticed-giavanna.ngrok-free.dev/api';
+// URL del backend en Render 24/7
+const API_URL = 'https://backend-solo-5a3o.onrender.com/api';
 
 // ======================
 // CURSOS
